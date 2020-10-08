@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pedra, Papel e Tesoura</title>
+</head>
+
+<body>
+    <script>
+        while (true) {
+            jogador1 = prompt("Jogador 1: Digite pedra, papel ou tesoura");
+            escolha = Math.random();
+
+            if (escolha < 0.33) {
+                jogador2 = "pedra";
+            } else if (escolha <= 0.66) {
+                jogador2 = "papel";
+            } else if (escolha < 0.99) {
+                jogador2 = "tesoura";
+            }
+
+            prompt("Computador: ", jogador2);
+
+            if (jogador1 == "pedra") {
+                if (jogador2 == "tesoura") {
+                    alert("Pedra quebra tesoura");
+                    alert("Jogador Venceu!!");
+                } else if (jogador2 == "papel") {
+                    alert("Papel cobre a Pedra");
+                    alert("Computador Venceu!!");
+                } else if (jogador2 == "pedra") {
+                    alert("Empate");
+                }
+
+            } else if (jogador1 == "tesoura") {
+                if (jogador2 == "pedra") {
+                    alert("Pedra quebra tesoura");
+                    alert("Computador Venceu!!");
+                } else if (jogador2 == "papel") {
+                    alert("tesoura corta papel");
+                    alert("Jogador Venceu!!");
+                } else if (jogadoe2 == "tesoura") {
+                    alert("Empate");
+                }
+            } else if (jogador1 == "papel") {
+                if (jogador2 == "pedra") {
+                    alert("Papel cobre pedra");
+                    alert("Jogador Venceu!!");
+                } else if (jogador2 == "tesoura") {
+                    alert("Tesoura corta papel");
+                    alert("Computador Venceu!!");
+                } else if (jogador2 == "papel") {
+                    alert("Empate");
+                }
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
