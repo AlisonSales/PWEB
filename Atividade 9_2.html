@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Atividade 9_2</title>
+</head>
+
+<body>
+    <script>
+        function Conta() { // “superclasse”
+            var nomeCorrentista;
+            var Banco;
+            var numConta;
+            var Saldo;
+            
+            this.getnomeCorrentista = function () {
+                return nomeCorrentista;
+            };
+            this.setnomeCorrentista = function (value) {
+                nomeCorrentista = value;
+            };
+            
+            this.getBANCO = function () {
+                return Banco;
+            };
+            this.setBANCO = function (value) {
+                Banco = value;
+            };
+            
+            this.getnumConta = function () {
+                return numConta;
+            };
+            this.setnumConta = function (value) {
+                numConta = value;
+            };
+            
+            this.getSaldo = function () {
+                return Saldo;
+            };
+            this.setSaldo = function (value) {
+                Saldo = value;
+            };
+            
+        }
+
+        function Corrente() { // “subclasse”
+            var saldoesp;
+            this.getSALDOESP = function () {
+                return saldoesp;
+            };
+            this.setSALDOESP = function (value) {
+                saldoesp = value;
+            };
+        }
+
+        function Poupanca() { // “subclasse”
+            var juros;
+            var datavenc;
+            
+            this.getJUROS = function () {
+                return juros;
+            };
+            this.setJUROS = function (value) {
+                juros = value;
+            };
+            
+            this.getDATAVENC = function () {
+                return datavenc;
+            };
+            this.setDATAVENC = function (value) {
+                datavenc = value;
+            };
+        }
+
+        //  herança	           
+        Corrente.prototype = new Conta();
+        Poupanca.prototype = new Conta();
+
+        //>>>> Criando novo objeto <<<<<<
+        nCorrente = new Corrente();
+        nPoupanca = new Poupanca();
+        
+        
+        nCorrente.setBANCO("Bradesco");
+        nCorrente.setnomeCorrentista("Fulano de Tal");
+        nCorrente.setnumConta("100100");
+        nCorrente.setSaldo("R$ 1.500,00");
+        nCorrente.setSALDOESP("R$ 2.000,00")
+        
+        nPoupanca.setBANCO("Itau");
+        nPoupanca.setDATAVENC("01/01/2021");
+        nPoupanca.setJUROS("0,5%");
+        nPoupanca.setnomeCorrentista("Jose de longe");
+        nPoupanca.setnumConta("100201");
+        nPoupanca.setSaldo("R$ 5.000,00");
+        
+        
+        document.write("Correntista: " + nCorrente.getnomeCorrentista() + "<br>");
+        document.writeln("Banco: " + nCorrente.getBANCO() + "<br>");
+        document.writeln("Número da conta: " + nCorrente.getnumConta() + "<br>");
+        document.writeln("Saldo: " + nCorrente.getSaldo() + "<br>");
+        document.writeln("Saldo especial: " + nCorrente.getSALDOESP() + "<br>");
+        
+        
+        
+        document.write("<br>" + "Correntista: " + nPoupanca.getnomeCorrentista() + "<br>");
+        document.writeln("Banco: " + nPoupanca.getBANCO() + "<br>");
+        document.writeln("Número da conta: " + nPoupanca.getnumConta() + "<br>");
+        document.writeln("Data de vencimento: " + nPoupanca.getDATAVENC() + "<br>");
+        document.writeln("Juros: " + nPoupanca.getJUROS() + "<br>");
+        document.writeln("Saldo da conta: " + nPoupanca.getSaldo());
+        
+        
+        
+    </script>
+</body>
+
+</html>
