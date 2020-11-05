@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Atividade 12</title>
+    <meta name="author" content=Alison />
+    <link href="estilo.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="form">
+        <form method="post" name="dados" onsubmit="validar()">
+            <p>
+                <label>Nome:</label>
+                <br>
+                <input type="text" name="nome" minlength="10">
+            </p>
+            <p>
+                <label>Email:</label>
+                <br>
+                <input type="email" name="email" maxlength="50" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$">
+            </p>
+
+            <label>Comentário:</label>
+            <br>
+            <textarea name="mensagem" cols="50" rows="10" minlength="20"></textarea>
+
+            <H2>
+                Pesquisa
+            </H2>
+
+            <H3>
+                Primeira vez na página?
+            </H3>
+
+            <input type="radio" name="escolha" id="s">
+            <label for="sim">Sim</label>
+            <input type="radio" name="escolha" id="n" checked="true">
+            <label for="não">Não</label>
+
+            <p>
+                <input type="submit" value="Enviar">
+                <input TYPE="reset" VALUE="Limpar">
+            </p>
+
+
+        </form>
+    </div>
+
+    <script>
+        function validar() {
+            if (document.dados.nome.value== "")
+                alert("Preencher nome")
+            else if (document.dados.email.value=="")
+                alert("Preencher email")
+            else if (document.dados.mensagem.value=="")
+                alert("Preencher a mensagem")
+            else if (document.dados.s.checked)
+                alert("Volte sempre")
+            else 
+                alert ("Que bom que retornou");
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

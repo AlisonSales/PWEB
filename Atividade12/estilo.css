@@ -1,0 +1,15 @@
+body {
+	margin:5px;
+	background-color: #cccccc; 
+	font-family:"Trebuchet MS", Tahoma, Arial, Verdana;
+	font-size:12px;
+	color:#000;
+}
+
+.form {
+    width: 750px;
+	border: 1px solid black;
+	margin: auto; /* topo 0 direita automatica */
+	background-color:burlywood;
+}
+
